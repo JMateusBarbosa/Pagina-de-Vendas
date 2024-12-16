@@ -1,5 +1,6 @@
 import React from 'react';
 import { BookOpen, Facebook, Instagram, Linkedin, Mail, Phone } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export default function Footer() {
   return (
@@ -23,7 +24,7 @@ export default function Footer() {
               <li><a href="#" className="text-gray-400 hover:text-white">Produtos</a></li>
               <li><a href="#" className="text-gray-400 hover:text-white">Política de Privacidade</a></li>
               <li><a href="#" className="text-gray-400 hover:text-white">Termos de Uso</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white">Acesso do Vendedor</a></li>
+              <li><Link to="/seller/login" className="text-gray-400 hover:text-white">Acesso do Vendedor</Link></li>
             </ul>
           </div>
           
@@ -59,7 +60,6 @@ export default function Footer() {
         
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
           <p>&copy; 2024 DigiBooks. Todos os direitos reservados.</p>
-          
         </div>
       </div>
     </footer>

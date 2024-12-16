@@ -4,8 +4,6 @@ import { ArrowRight } from 'lucide-react';
 export default function Hero() {
   return (
     <section className="pt-24 pb-12 bg-gradient-to-r from-[#ffcba8] to-[#f86392]">
-
-
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center">
           <div className="md:w-1/2 space-y-6">

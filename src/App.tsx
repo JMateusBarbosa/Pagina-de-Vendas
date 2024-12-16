@@ -1,15 +1,20 @@
 import React from 'react';
-import Header from './components_client/Header';
-import Hero from './components_client/Hero';
-import Benefits from './components_client/Benefits';
-import Products from './components_client/Products';
-import Testimonials from './components_client/Testimonials';
-import CTA from './components_client/CTA';
-import Footer from './components_client/Footer';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Header from './components/Header';
+import Hero from './components/Hero';
+import Benefits from './components/Benefits';
+import Products from './components/Products';
+import Testimonials from './components/Testimonials';
+import CTA from './components/CTA';
+import Footer from './components/Footer';
+import LoginPage from './pages/seller/LoginPage';
+import AdminLayout from './components/seller/layout/AdminLayout';
+import DashboardPage from './pages/seller/DashboardPage';
+import ProductsPage from './pages/seller/ProductsPage';
 
-function App() {
+function HomePage() {
   return (
-    <div className="min-h-screen bg-white">
+    <>
       <Header />
       <main>
         <Hero />
@@ -19,7 +24,24 @@ function App() {
         <CTA />
       </main>
       <Footer />
-    </div>
+    </>
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      <div className="min-h-screen bg-white">
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/seller/login" element={<LoginPage />} />
+          <Route path="/seller" element={<AdminLayout />}>
+            <Route path="dashboard" element={<DashboardPage />} />
+            <Route path="products" element={<ProductsPage />} />
+          </Route>
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
